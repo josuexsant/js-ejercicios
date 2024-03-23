@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 9</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Carga de Sueldos</h2>
+      <p>
+        Ingrese los sueldos de los empleados. Ingrese 0 para finalizar la carga.
+      </p>
+      <input type="number"
+      id="sueldoInput" 
+      placeholder="Ingrese el sueldo" 
+      min="0"/>
+
+      <button onclick="cargarSueldo()" class="btn" id="cargarBtn">
+        Cargar
+      </button>
+      <p id="resultados"></p>
+    </div>
+
+    <script>
+      let sueldos = [];
+
+      function cargarSueldo() {
+        const sueldo = parseFloat(document.getElementById("sueldoInput").value);
+        if (sueldo === 0) {
+          mostrarSueldosOrdenados();
+        } else {
+          sueldos.push(sueldo);
+          document.getElementById("sueldoInput").value = "";
+        }
+      }
+
+      function mostrarSueldosOrdenados() {
+        sueldos.sort((a, b) => b - a);
+        const resultados = document.getElementById("resultados");
+        resultados.innerHTML =
+          "<strong>Sueldos ordenados de mayor a menor:</strong><br>";
+        sueldos.forEach((sueldo) => {
+          resultados.innerHTML += sueldo + "<br>";
+        });
+        document.getElementById("cargarBtn").disabled = true; // Desactivar el botón después de cargar los sueldos
+      }
+    </script>
+  </body>
+</html>

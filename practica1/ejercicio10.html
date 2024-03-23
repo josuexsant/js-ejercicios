@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 10</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="titulo">Ejercicio 10</h2>
+
+      <p id="info"></p>
+
+      <script src="js/participante.js"></script>
+      <script>
+        let personas = [
+          { nombre: "Juan", edad: 30, ciudad: "Buenos Aires" },
+          { nombre: "María", edad: 25, ciudad: "Madrid" },
+          { nombre: "Pedro", edad: 35, ciudad: "Lima" },
+          { nombre: "Ana", edad: 28, ciudad: "Santiago" },
+          { nombre: "Carlos", edad: 40, ciudad: "México DF" },
+        ];
+
+        let mensaje = personas
+          .map((persona) => {
+            return `Nombre: ${persona.nombre}, Edad: ${persona.edad}, Ciudad: ${persona.ciudad}`;
+          })
+          .join("<br>");
+
+        document.getElementById("info").innerHTML = mensaje;
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 8</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="titulo">Ejercicio 8</h2>
+      <input type="text" id="name" placeholder="Inserta el nombre" />
+
+      <button type="button" onclick="verParticipante()" class="btn">
+        Ver participante
+      </button>
+      <p id="info"></p>
+      <p id="pts"></p>
+
+      <input type="number" id="pts" placeholder="Agrega los puntos obtenidos" />
+      <button type="button" onclick="agregarPuntos()" class="btn">
+        Agregar
+      </button>
+
+
+      <script src="js/participante.js"></script>
+      <script>
+        let participante;
+
+        function verParticipante() {
+          const nombre = document.getElementById("name").value;
+          participante = new Participante(nombre);
+          participante.imprimir();
+        }
+
+        function agregarPuntos() {
+          const puntos = parseInt(document.getElementById("pts").value);
+          participante.aumentarPuntos(puntos);
+          participante.imprimir();
+          participante.verificarSiGano();
+        }
+      </script>
+    </div>
+  </body>
+</html>
