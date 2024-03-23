@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 6</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="titulo">Ejercicio 6</h2>
+
+      <input type="text" id="name" placeholder="Nombre de la persona" />
+
+      <input type="number" id="age" min="18" placeholder="Edad de la persona" />
+
+
+      <button
+        type="button"
+        onclick="addPerson(document.getElementById('name').value, document.getElementById('age').value)"
+        class="btn"
+      >
+        Agregar
+      </button>
+      
+      <h>Lista de candidatos en el limite de edad</h3>
+      <p id="candidatesList"></p>
+
+      <script src="js/persona.js"></script>
+      <script src="js/empresa.js"></script>
+      <script src="js/ejercicio6.js"></script>
+    </div>
+  </body>
+</html>

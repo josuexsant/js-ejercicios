@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <h2 class="titulo">Ejercicio 1</h2>
+      <button type="button" onclick="setText(1)" class="btn">1</button>
+      <button type="button" onclick="setText(2)" class="btn">2</button>
+      <button type="button" onclick="setText(3)" class="btn">3</button>
+      <p id="selection"></p>
+
+      <script>
+        function setText(text) {
+          document.getElementById("selection").innerHTML =
+            "Has seleccionado el número " + text;
+          console.log(text);
+        }
+      </script>
+    </div>
+
+  </body>
+</html>

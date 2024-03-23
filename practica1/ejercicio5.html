@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 5</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="titulo">Ejercicio 5</h2>
+
+      <input
+        type="number"
+        id="number1"
+        value=""
+        placeholder="Ingresa un número"
+      />
+
+      <input
+        type="number"
+        id="number2"
+        value=""
+        placeholder="Ingresa un número"
+      />
+
+      <button type="button" onclick="sumar()" class="btn">Sumar</button>
+      <p id="selection"></p>
+
+      <script>
+        class Suma {
+          constructor() {
+            this.valor1 = 0;
+            this.valor2 = 0;
+          }
+
+          cargarValor1(valor) {
+            this.valor1 = valor;
+          }
+
+          cargarValor2(valor) {
+            this.valor2 = valor;
+          }
+
+          retornarResultado() {
+            return this.valor1 + this.valor2;
+          }
+        }
+
+        function sumar() {
+          var number1 = document.getElementById("number1").value;
+          var number2 = document.getElementById("number2").value;
+
+          var s = new Suma();
+          s.cargarValor1(parseInt(number1));
+          s.cargarValor2(parseInt(number2));
+          document.getElementById("selection").innerText =
+            "La suma de los dos valores es: " + s.retornarResultado();
+        }
+      </script>
+    </div>
+  </body>
+</html>

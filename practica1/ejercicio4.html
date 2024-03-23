@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 4</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="titulo">Ejercicio 4</h2>
+
+      <input type="checkbox" id="checkboxFutbol" value="Futbol" />
+      <label for="checkboxFutbol">Fútbol</label>
+
+      <input type="checkbox" id="checkboxBaseball" value="Baseball" />
+      <label for="checkboxBaseball">Baseball</label>
+      <input type="checkbox" id="checkboxTennis" value="Tennis" />
+      <label for="checkboxTennis">Tennis</label>
+
+      <button type="button" onclick="getSelection()" class="btn">
+        Ver selección
+      </button>
+
+      <p id="selection"></p>
+
+      <script>
+        function getSelection() {
+          let seleccion = "";
+
+          if (document.getElementById("checkboxFutbol").checked) {
+            seleccion += "Futbol ";
+          }
+
+          if (document.getElementById("checkboxBaseball").checked) {
+            seleccion += "Baseball ";
+          }
+
+          if (document.getElementById("checkboxTennis").checked) {
+            seleccion += "Tennis ";
+          }
+          document.getElementById("selection").innerText = seleccion;
+        }
+      </script>
+    </div>
+  </body>
+</html>

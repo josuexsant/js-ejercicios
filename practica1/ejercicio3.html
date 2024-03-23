@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="titulo">Ejercicio 3</h2>
+
+      <input
+        type="number"
+        id="number1"
+        value="textField"
+        placeholder="Ingresa un número"
+      />
+
+      <input
+        type="number"
+        id="numbre2"
+        value="textField"
+        placeholder="Ingresa un número"
+      />
+
+      <button
+        type="button"
+        onclick="comparar(document.getElementById('number1').value,document.getElementById('numbre2').value)"
+        class="btn"
+      >
+        Calcular al cuadrado
+      </button>
+      <p id="selection"></p>
+
+      <script>
+        function comparar(number1, numbre2) {
+          if(number1>numbre2){
+          alert(number1 + ' es más grande que ' + numbre2);
+          }else if(number1<numbre2){
+            alert(numbre2 + ' es más grande que ' + number1);
+          }else if(number1 == 0 || numbre2 == 0){
+            alert('Llena todos los campos')
+          }else if(number1 == numbre2){
+            alert('Los dos números son iguales');
+        }
+        }
+      </script>
+    </div>
+  </body>
+</html>
